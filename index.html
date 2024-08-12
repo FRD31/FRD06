@@ -24,16 +24,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
         }
 
         nav {
             display: flex;
+            flex-wrap: wrap; /* Permite que los enlaces se ajusten en varias líneas */
         }
 
         nav a {
             color: #13ff00; /* Verde neón */
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
+            margin: 5px; /* Espacio entre enlaces */
             transition: background-color 0.3s, transform 0.3s;
         }
 
@@ -45,12 +48,33 @@
         .content {
             padding: 20px;
             flex: 1; /* Permite que el contenido ocupe el espacio restante */
+            text-align: center; /* Centra el texto en la pantalla */
         }
 
         footer {
             text-align: center;
             padding: 20px;
             background-color: #252424; /* Color de fondo del pie de página */
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+                align-items: flex-start; /* Alinea a la izquierda */
+            }
+
+            nav {
+                width: 100%; /* El menú ocupa el 100% del ancho */
+            }
+
+            nav a {
+                padding: 10px; /* Ajusta el padding para enlaces en móviles */
+            }
+
+            .content {
+                padding: 10px; /* Reduce el padding en contenido para móviles */
+            }
         }
     </style>
 </head>
@@ -79,3 +103,4 @@
 
 </body>
 </html>
+
