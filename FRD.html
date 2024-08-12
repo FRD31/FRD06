@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> FRD </title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: green;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            background-color: darkgreen;
+            transform: scale(1.1);
+        }
+
+        .banner {
+            width: 100%;
+            height: 353px; /* Altura según la del iframe */
+            border: none; /* Eliminar el borde del iframe */
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: green;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mi Página de Influencer</h1>
+    <nav>
+        <a href="#home">Inicio</a>
+        <a href="#about">Acerca de</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+</header>
+
+<iframe class="banner" src="https://assets.pinterest.com/ext/embed.html?id=881157483335762544" frameborder="0" scrolling="no"></iframe>
+
+<div class="content">
+    <h2>Bienvenido a mi página</h2>
+    <p>Me encuentro como influencer: 🇲🇽 FRD 🇲🇽</p>
+    <p>Aquí encontrarás contenido sobre mis proyectos, ideas y mucho más.</p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Diego. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
