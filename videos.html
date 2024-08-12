@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRD - Subir Video</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace a tu archivo CSS -->
+</head>
+<body>
+
+<header>
+    <h1>FRD</h1>
+    <nav>
+        <a href="#home">Inicio</a>
+        <a href="#about">Acerca de</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+</header>
+
+<div class="content">
+    <h2>Bienvenido a mi página</h2>
+    <p>Me encuentro como influencer: 🇲🇽 FRD 🇲🇽</p>
+    
+    <!-- Formulario para subir videos -->
+    <div class="upload-form">
+        <h3>Sube tu video</h3>
+        <input type="file" id="video" accept="video/*" required>
+        <button id="uploadButton">Subir Video</button>
+        <div id="uploadStatus"></div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Diego. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    document.getElementById('uploadButton').onclick = function() {
+        const fileInput = document.getElementById('video');
+        const file = fileInput.files[0];
+
+        if (file) {
+            const formData = new FormData();
+            formData.append('video', file);
+
+            // Cambia 'your-server-endpoint' por tu endpoint real
+            fetch('your-server-endpoint', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('uploadStatus').innerText = 'Video subido con éxito!';
+                } else {
+                    document.getElementById('uploadStatus').innerText = 'Error al subir el video.';
+                }
+            })
+            .catch(error => {
+                document.getElementById('uploadStatus').innerText = 'Error: ' + error.message;
+            });
+        } else {
+            alert('Por favor, selecciona un archivo de video.');
+        }
+    };
+</script>
+
+</body>
+</html>
+
